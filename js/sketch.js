@@ -83,6 +83,18 @@ function drawHomePage() {
 }
 
 function transition() {
-  var intId = setInterval(function(){ backgroundRed++; }, 5);
+  var intId = setInterval(function(){
+     backgroundRed++;
 
+   }, 5);
+
+}
+
+
+function windowResized() {
+  screenSize = {
+    width: window.innerWidth || document.body.clientWidth,
+    height: window.innerHeight || document.body.clientHeight
+  }
+  resizeCanvas(windowWidth, windowHeight);
 }
