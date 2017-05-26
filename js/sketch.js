@@ -81,3 +81,8 @@ function drawHomePage() {
     particle.bounds();
   }
 }
+
+function transition() {
+  var intId = setInterval(function(){ backgroundRed++; }, 5);
+
+}
