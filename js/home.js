@@ -49,3 +49,5 @@ function drawHomePage() {
     particle.bounds();
   }
 }
+
+console.log("works");
