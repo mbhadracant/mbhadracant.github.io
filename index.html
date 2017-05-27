@@ -1,9 +1,11 @@
 <html>
+
 <head>
   <link rel="stylesheet" href="css/main.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
 </head>
+
 <body>
   <div id="home-page">
     <div id="home-title-container">
@@ -18,47 +20,64 @@
     </div>
     <div id="links">
       <ul>
-        <li id="about"><a>ABOUT</a></li>
-        <li><a>WORK EXPERIENCE</a></li>
-        <li><a>PROJECTS</a></li>
-        <li><a>CONTACTS</a></li>
+        <li id="about"><a>ABOUT ME</a></li>
+        <li class="seperator">/</li>
+        <li id="work"><a>WORK EXPERIENCE</a></li>
+        <li class="seperator">/</li>
+        <li id="projects"><a>PROJECTS</a></li>
+        <li class="seperator">/</li>
+        <li id="contact"><a>CONTACT</a></li>
       </ul>
     </div>
   </div>
   <div id="about-page">
     <div id="about-title">
-        ABOUT ME
+      ABOUT ME
     </div>
 
     <div id="about-summary">
       <div>
-      Hey! My name is Mayur and I'm a future software engineer.<br />
-      I currently am studying a MSc Computer Science at the university of Manchester.<br />
-      I love anything to do with coding, table tennis and travelling.
+        Hey! <br /> My name is Mayur and I'm a future software engineer.<br /> I currently am studying a MSc Computer Science at the university of Manchester.<br /> I love anything to do with coding, table tennis and travelling.
+      </div>
     </div>
-  </div>
     <img src="img/me.jpg" />
-</div>
+  </div>
 
   <div id="canvas-bg"></div>
   <script src="js/jquery-3.2.1.min.js"></script>
   <script src="js/matter.min.js"></script>
   <script src="js/p5.min.js"></script>
   <script src="js/home.js"></script>
+  <script src="js/about.js"></script>
   <script src="js/bg.js"></script>
   <script src="js/sketch.js"></script>
   <script>
-  $(function() {
-    $("#home-title-container").fadeIn(600, function() {
-      $("#links").fadeIn(600);
+    $(function() {
+      $("#home-title-container").fadeIn(600, function() {
+        $("#links").fadeIn(600);
+      });
+      $("#about").click(function() {
+        $("#home-page").fadeOut();
+        transitionToAboutPage();
+        $("#about-page").fadeIn();
+      });
+      $("#work").click(function() {
+        $("#home-page").fadeOut();
+        transitionToWorkPage();
+        $("#about-page").fadeIn();
+      });
+      $("#projects").click(function() {
+        $("#home-page").fadeOut();
+        transitionToProjectsPage();
+        $("#about-page").fadeIn();
+      });
+      $("#contact").click(function() {
+        $("#home-page").fadeOut();
+        transitionToContactPage();
+        $("#about-page").fadeIn();
+      });
     });
-    $("#about").click(function() {
-      $("#home-page").fadeOut();
-      transitionToAboutPage();
-      $("#about-page").fadeIn();
-    });
-
-  });
   </script>
 </body>
+
 </html>
