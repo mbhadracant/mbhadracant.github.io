@@ -5,7 +5,7 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
 </head>
 <body>
-  <div>
+  <div id="home-page">
     <div id="home-title-container">
       <div class="center-absolute">
         <div id="home-title">
@@ -24,16 +24,41 @@
         <li><a>CONTACTS</a></li>
       </ul>
     </div>
-    <div id="canvas-bg"></div>
   </div>
+  <div id="about-page">
+    <div id="about-title">
+        ABOUT ME
+    </div>
 
+    <div id="about-summary">
+      <div>
+      Hey! My name is Mayur and I'm a future software engineer.<br />
+      I currently am studying a MSc Computer Science at the university of Manchester.<br />
+      I love anything to do with coding, table tennis and travelling.
+    </div>
+  </div>
+    <img src="img/me.jpg" />
+</div>
+
+  <div id="canvas-bg"></div>
   <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/matter.min.js"></script>
   <script src="js/p5.min.js"></script>
+  <script src="js/home.js"></script>
+  <script src="js/bg.js"></script>
   <script src="js/sketch.js"></script>
   <script>
-    $("#about").click(function() {
-      transition();
+  $(function() {
+    $("#home-title-container").fadeIn(600, function() {
+      $("#links").fadeIn(600);
     });
+    $("#about").click(function() {
+      $("#home-page").fadeOut();
+      transitionToAboutPage();
+      $("#about-page").fadeIn();
+    });
+
+  });
   </script>
 </body>
 </html>
