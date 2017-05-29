@@ -1,41 +1,69 @@
 var State = Object.freeze({HOME: 0, ABOUT: 1, WORK: 2, PROJECTS: 3, CONTACT: 4});
 var currentState = State.HOME;
-var screenSize = {
-  width: window.innerWidth || document.body.clientWidth,
-  height: window.innerHeight || document.body.clientHeight
-}
 
-function windowResized() {
+var screenSize;
+
+function updateScreenSize() {
+  var body = document.body,
+      html = document.documentElement;
+
   screenSize = {
     width: window.innerWidth || document.body.clientWidth,
-    height: window.innerHeight || document.body.clientHeight
+    height: Math.max( body.scrollHeight, body.offsetHeight,
+                           html.clientHeight, html.scrollHeight, html.offsetHeight)
   }
-  resizeCanvas(windowWidth, windowHeight);
+
+  resizeCanvas(screenSize.width, screenSize.height);
+}
+
+
+function windowResized() {
+  updateScreenSize();
+  resizeCanvas(screenSize.width, screenSize.height);
 }
 
 function transitionToAboutPage() {
+  reset();
   transitionBG(125,25,53);
-  particles = [];
-  currentState = State.ABOUT;
   setupAboutPage();
+  currentState = State.ABOUT;
+  updateScreenSize();
 }
 
 function transitionToWorkPage() {
-  transitionBG(125,25,53);
-  particles = [];
+  reset();
+  transitionBG(10,100,180);
   currentState = State.WORK;
+  updateScreenSize();
+  setupWorkPage();
 }
 
 function transitionToProjectsPage() {
   transitionBG(125,25,53);
-  particles = [];
+  updateScreenSize();
+  reset();
   currentState = State.PROJECTS;
 }
 
 function transitionToContactPage() {
+  reset();
   transitionBG(125,25,53);
-  particles = [];
+  updateScreenSize();
   currentState = State.CONTACT;
+}
+
+function transitionToHomePage() {
+  transitionBG(40,20,100);
+  reset();
+  updateScreenSize();
+  currentState = State.HOME;
+  setupHomePage();
+}
+
+function reset() {
+  circles = [];
+  particles = [];
+  dots = [];
 }
 
 function mousePressed() {
@@ -46,16 +74,18 @@ function mousePressed() {
     case State.ABOUT:
       circles.push(new Circle(mouseX, mouseY));
       break;
+    case State.WORK:
+      dots.push(new Dot(mouseX, mouseY));
+      break;
   }
 }
 
 
 function setup() {
+  updateScreenSize();
   var canvas = createCanvas(screenSize.width,screenSize.height);
   canvas.parent('canvas-bg');
-  for(var i = 0; i < 10; i++) {
-    particles.push(new Particle(random(screenSize.width),random(screenSize.height)));
-  }
+  setupHomePage();
 
 }
 
@@ -67,6 +97,9 @@ function draw() {
       break;
     case State.ABOUT:
       drawAboutPage();
+      break;
+    case State.WORK:
+      drawWorkPage();
       break;
   }
 }

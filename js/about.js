@@ -1,12 +1,12 @@
+var circles = [];
+var ground;
+
 var Engine = Matter.Engine;
 var World = Matter.World;
 var Bodies = Matter.Bodies;
 
 var engine;
 var world;
-var circle;
-var ground;
-var circles = [];
 
 function Circle(x, y) {
   var options = {restitution : 1, friction:0};

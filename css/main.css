@@ -3,7 +3,13 @@ body {
   font-family: 'Open Sans', sans-serif;
   color: white;
 }
-
+#test {
+  width:30px;
+  height:30px;
+  position:absolute;
+  left:0%;
+  top:0%;
+}
 canvas {
   position: absolute;
   top: 0;
@@ -51,7 +57,7 @@ canvas {
   padding-bottom: 3px;
   color: white;
   font-weight: 300;
-  margin: 0 20px 0 10px;
+  margin: 0 30px 0 0px;
 }
 
 #links a {
@@ -73,26 +79,24 @@ canvas {
   background: white;
 }
 
-
-/*********************************************************/
-
-
-/*                      ABOUT                            */
-
-
-/*********************************************************/
-
-#about-page {
-  display: none;
-}
-
-#about-title {
+.title {
+  width:100%;
+  text-align: center;
   font-size: 32px;
   text-transform: uppercase;
   position: absolute;
   top: 5%;
   left: 50%;
   transform: translateX(-50%) translateY(50%);
+  text-decoration: underline;
+}
+
+/*********************************************************/
+/*                      ABOUT                            */
+/*********************************************************/
+
+#about-page {
+  display: none;
 }
 
 #about-summary {
@@ -115,6 +119,160 @@ canvas {
   left: 50%;
   transform: translateX(-50%) translateY(50%);
 }
+
+/*********************************************************/
+/*            WORK EXPERIENCE                            */
+/*********************************************************/
+
+
+#work-page {
+  display:none;
+}
+
+#work-timeline {
+  position: relative;
+  left:50%;
+  transform: translateX(-50%);
+  margin-top:150px;
+  width:50px;
+}
+
+.line {
+  position: relative;
+  left:50%;
+  transform: translateX(-50%);
+  width:1px;
+  background:white;
+}
+
+.line-12 { height:150px;}
+.line-11 { height:137.5px;}
+.line-10 { height:125px;}
+.line-9 { height:112.5px;}
+.line-8 { height:100px;}
+.line-7 { height:87.5px;}
+.line-6 { height:75px;}
+.line-5 { height:62.5px;}
+.line-4 { height:50px;}
+.line-3 { height:37.5px;}
+.line-2 { height:25px;}
+.line-1 { height:12.5px;}
+
+
+
+
+.year {
+  display: inline-block;
+  font-weight: bold;
+  border:1px solid white;
+  position: relative;
+  text-align: center;
+  padding:8px;
+  z-index: 10;
+}
+
+.year:nth-child(n+2) {
+  margin-left:-20px;
+}
+
+.circle {
+  position: relative;
+  left:50%;
+  transform: translateX(-50%);
+  height:10px;
+  width:10px;
+  background:white;
+  border-radius: 50%;
+}
+
+.inner-circle {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform: translateX(-50%) translateY(-50%);
+  height:10px;
+  width:10px;
+  background:white;
+  border-radius: 50%;
+}
+
+.line-join {
+  position:relative;
+  top:50%;
+  transform: translateY(-50%);
+  height:2px;
+  width:150px;
+  background:rgba(255,255,255,0.4);
+}
+
+
+.line-right {
+  left:0px;
+}
+
+.line-left {
+  right:150px;
+}
+
+.panel {
+  padding:10px;
+  position:relative;
+  background:rgba(0,0,0,0.1);
+  width:300px;
+  height:150px;
+  top:-70px;
+}
+
+.panel-right {
+    left:150px;
+}
+
+.panel-left {
+  left:-320px;
+}
+
+.panel-header-text {
+  float:right;
+  padding:2px;
+}
+
+.panel-logo {
+  height:50px;
+  display:inline-block;
+}
+
+.panel-header {
+  height:50px;
+   width:100%;
+}
+
+.employer {
+  font-weight: bold;
+  text-align:center;
+}
+
+.role {
+  text-align:center;
+}
+
+.description {
+  margin-top:20px;
+  text-align:center;
+  font-size:12px;
+}
+
+.logo {
+  height:40px;
+  left:50%;
+  transform: translateX(-50%);
+  position: relative;
+}
+
+
+/*********************************************************/
+/*            MEDIA QUERIES                              */
+/*********************************************************/
+
 
 
 @media (min-width:320px) {

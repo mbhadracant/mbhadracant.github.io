@@ -27,6 +27,12 @@ Particle.prototype.bounds = function() {
   }
 }
 
+function setupHomePage() {
+  for(var i = 0; i < 10; i++) {
+    particles.push(new Particle(random(screenSize.width),random(screenSize.height)));
+  }
+}
+
 function drawHomePage() {
   fill(240);
   for(var i = particles.length - 1; i >= 0; i--) {
