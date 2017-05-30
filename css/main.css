@@ -330,7 +330,7 @@ canvas {
 
 .mobile-panel {
   display: none;
-  width:245px;
+  width:270px;
   position: absolute;
   background: rgba(0, 0, 0, 0.1);
   margin-left: 30px;
