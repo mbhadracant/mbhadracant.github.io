@@ -4,12 +4,28 @@ body {
   color: white;
 }
 
-#test {
+#back {
+  cursor:pointer;
+  display:none;
+  margin-left:20px;
   width: 30px;
   height: 30px;
   position: absolute;
   left: 0%;
   top: 0%;
+}
+
+i {
+  border: solid white;
+  border-width: 0 7px 7px 0;
+  display: inline-block;
+  padding: 7px;
+}
+
+
+.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
 }
 
 canvas {

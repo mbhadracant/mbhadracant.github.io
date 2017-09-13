@@ -38,19 +38,13 @@ function transitionToWorkPage() {
   setupWorkPage();
 }
 
-function transitionToProjectsPage() {
+function transitionToResumePage() {
   transitionBG(125,25,53);
   updateScreenSize();
   reset();
   currentState = State.PROJECTS;
 }
 
-function transitionToContactPage() {
-  reset();
-  transitionBG(125,25,53);
-  updateScreenSize();
-  currentState = State.CONTACT;
-}
 
 function transitionToHomePage() {
   transitionBG(40,20,100);

@@ -7,7 +7,9 @@
 </head>
 
 <body>
-  <div id="test"></div>
+  <div id="back">
+    <p><i class="arrow left"></i></p>
+  </div>
   <div id="canvas-bg"></div>
   <div id="home-page" class="page">
     <div id="home-title-container">
@@ -26,9 +28,7 @@
         <li class="seperator">/</li>
         <li id="work"><a>WORK EXPERIENCE</a></li>
         <li class="seperator">/</li>
-        <li id="projects"><a>PROJECTS</a></li>
-        <li class="seperator">/</li>
-        <li id="contact"><a>CONTACT</a></li>
+        <li id="resume"><a>RESUME</a></li>
       </ul>
     </div>
   </div>
@@ -39,7 +39,7 @@
 
     <div id="about-summary">
       <div>
-        Hey! <br /> My name is Mayur and I'm a future software engineer.<br /> I currently am studying a MSc Computer Science at the university of Manchester.<br /> I love anything to do with coding, table tennis and travelling.
+        Hey! <br /> My name is Mayur and I'm a future software engineer.<br /> I currently am studying a MSc in Advanced Computer Science at the University of Manchester.<br />
       </div>
     </div>
     <img src="img/me.jpg" />
@@ -153,7 +153,6 @@
         <div class="line line-6"></div>
         <div class="year">2015</div>
       </div>
-
     </div>
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/matter.min.js"></script>
@@ -163,44 +162,7 @@
     <script src="js/work.js"></script>
     <script src="js/bg.js"></script>
     <script src="js/sketch.js"></script>
-    <script>
-      $(function() {
-        $("#home-title-container").fadeIn(600, function() {
-          $("#links").fadeIn(600);
-        });
-
-        $("#about").click(function() {
-          $("#home-page").fadeOut();
-          transitionToAboutPage();
-          $("#about-page").fadeIn();
-        });
-        $("#work").click(function() {
-          $("#home-page").fadeOut();
-          transitionToWorkPage();
-          $("#work-page").fadeIn(function() {
-            updateScreenSize();
-          });
-        });
-        $("#projects").click(function() {
-          $("#home-page").fadeOut();
-          transitionToProjectsPage();
-          $("#projects-page").fadeIn();
-        });
-        $("#contact").click(function() {
-          $("#home-page").fadeOut();
-          transitionToContactPage();
-          $("#contact-page").fadeIn();
-        });
-        $("#test").click(function() {
-          updateScreenSize();
-          $(".page").fadeOut();
-          transitionToHomePage();
-          $("#home-page").fadeIn();
-        });
-        $("#work").click();
-
-      });
-    </script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
