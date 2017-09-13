@@ -18,7 +18,7 @@ $(function() {
     });
   });
   $("#resume").click(function() {
-    window.location.href = "cv.pdf"
+    window.location.href = "CV.pdf"
   });
   $("#back").click(function() {
     $(this).fadeOut();
