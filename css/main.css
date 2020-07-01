@@ -230,10 +230,6 @@ canvas {
   z-index: 10;
 }
 
-.year:nth-child(n+2) {
-  margin-left: -20px;
-}
-
 .circle {
   position: relative;
   left: 50%;
