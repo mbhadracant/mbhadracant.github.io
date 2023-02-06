@@ -1,0 +1,87 @@
+// export default (svg: SVGSVGElement, setIsRunning: Function, duration: number, dataset: number[], data: Map<Input, any>) => {
+//   setIsRunning(true);
+//   const bars = select(svg).selectAll('rect').nodes().sort((a, b) => parseInt(select(a).attr('x')) - parseInt(select(b).attr('x')));
+//   let currDuration = 0;
+//   let now = d3.now();
+//   let counter = 0;
+//   const text = select(svg).append("text")
+//     .text("0")
+//     .attr("x", 50)
+//     .attr("y", 250)
+//     .attr('fill', 'white')
+//     .attr('font-size', '120px');
+
+//   for (let i = 0; i < 5; i++) {
+//     const t = select(svg).append("text")
+//       .text(i + 1)
+//       .attr("x", 100 * i)
+//       .attr("y", 400)
+//       .attr('fill', 'white')
+//       .attr('font-size', '40px')
+//       .attr('data', i + 1);
+    
+//     t.on('click', function (e) {
+//       if (stopped) {
+//         stopped = false;
+//         currDuration = 0;
+//         now = d3.now()
+//         let timesCopy: number[] = [];
+//         let timersCopy: d3.Timer[] = [];
+//         let callbacksCopy: MyFunctionType[] = [];
+        
+//         const d = parseFloat(select(this).attr('data'))
+//         for (let i = 0; i < times.length; i++) {
+//           if (times[i] > stoppedTime) {
+//             const callback = callbacks[i];
+//             timersCopy.push(d3.timeout(callback, currDuration))
+//             timesCopy.push(currDuration)
+//             callbacksCopy.push(callback);
+//             currDuration += (500 - (100 * d));
+//           }
+//         }
+  
+//         timers = timersCopy;
+//         times = timesCopy;
+//         callbacks = callbacksCopy;
+//       }
+//     })
+    
+//   }
+    
+  
+
+  
+//   type MyFunctionType = () => void;
+
+//   let times: number[] = [];
+//   let timers: d3.Timer[] = [];
+//   let callbacks: MyFunctionType[] = [];
+//   let stoppedTime = 0;
+//   let stopped = false;
+//   text.on('click', () => {
+//     stopped = true;
+//     stoppedTime = d3.now() - now;
+
+
+//     for (let i = 0; i < times.length; i++) {
+//       if (stopped) {
+//         timers[i].stop();
+//         console.log(stoppedTime)
+//       } 
+//     }
+//   });
+
+//   for (let i = 0; i < 20; i++) {
+//     const callback = () => text.text(d => counter++);
+//     timers.push(d3.timeout(callback, currDuration))
+//     callbacks.push(callback);
+//     times.push(currDuration)
+//     console.log(currDuration)
+//     currDuration += 500;
+//   }
+    
+
+//     d3.timeout(() => setIsRunning(false), currDuration);
+// }
+
+export default {};
