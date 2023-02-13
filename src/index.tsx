@@ -1,13 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { createRoot } from 'react-dom/client';
-
-
 import 'typeface-roboto'
 import './index.css';
 import App from './components/App/';
 import * as serviceWorker from './serviceWorker';
-import { BrowserRouter as Router, Route, Routes, createBrowserRouter, Link, RouterProvider, createHashRouter, HashRouter } from "react-router-dom";
+import { Route, Routes, HashRouter } from "react-router-dom";
 import styled from 'styled-components';
 
 

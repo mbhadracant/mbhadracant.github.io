@@ -1,11 +1,20 @@
 import React, { forwardRef } from 'react';
 import styled from 'styled-components';
+import { MARGIN } from '../../../constants/Values';
 
 const Container = styled.div`
     display:flex;
     flex-direction: column;
-    margin: 10px;
-    width:70%;
+    margin: 20px;
+    width:150px;
+    font-size:15px;
+    text-transform:uppercase;
+    transition: all 0.3s ease 0s;
+
+    @media (max-width: 768px) {
+        width:75px;
+        font-size:10px;
+    }
 `;
 
 const Label = styled.span`
@@ -27,6 +36,7 @@ const SliderInput = styled.input`
     -webkit-transition: .2s;
     transition: opacity .2s;
     margin:15px 0px;
+    transition: all 0.3s ease 0s;
 
     &:hover {
         opacity: 1;
@@ -34,13 +44,22 @@ const SliderInput = styled.input`
         cursor: pointer;
     }
 
+    
+
     &::-webkit-slider-thumb {
         -webkit-appearance: none;
         appearance: none;
-        width: 25px;
-        height: 25px;
+        width: 20px;
+        height: 20px;
         background: #4CAF50;
         cursor: pointer;
+
+        @media (max-width: 768px) {
+            width: 13px;
+            height: 13px;
+        }
+
+
     }
 
     &::-webkit-slider-thumb:active {
@@ -55,7 +74,7 @@ interface SpeedSliderProps {
     type: string,
     min: number,
     max: number,
-    onChange: Function
+    onChange: (num: React.ChangeEvent<HTMLInputElement>) => void
 }
 
 const SpeedSlider = forwardRef<HTMLInputElement, SpeedSliderProps>(

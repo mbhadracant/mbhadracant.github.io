@@ -4,9 +4,11 @@ enum Algorithms {
   INSERTION_SORT = 'Insertion Sort',
   MERGE_SORT = 'Merge Sort',
   QUICK_SORT = 'Quick Sort',
+  RADIX_SORT = 'Radix Sort',
   BINARY_SEARCH = 'Binary Search',
-  BREADTH_FIRST_SEARCH = 'BFS (Breadth First Search)',
-  DEPTH_FIRST_SEARCH = 'DFS (Depth First Search)',
+  BFS_MATRIX = 'BFS (Matrix)',
+  DFS_MATRIX = 'DFS (Matrix)',
+  BFS_BINARY_TREE = 'BFS (Binary Tree)'
 }
 
 export default Algorithms;

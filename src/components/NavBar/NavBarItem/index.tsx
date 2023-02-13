@@ -6,17 +6,28 @@ import Algorithms from '../../../constants/Algorithms';
 interface NavBarItemProps {
     title: string,
     subTitles: Array<Algorithms>
-    setAlgo: Function
+    setAlgo: React.Dispatch<React.SetStateAction<Algorithms>>
 }
 
 const Container = styled.div`
     color: white;
-    width:200px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-transform:uppercase;
+    width:120px;
     text-align: center;
     border:1px solid rgba(122, 122, 122, 0.1);
     font-size:12px;
     &:hover {
         background: rgba(0, 0, 0, 1);
+    }
+
+    transition: all 0.3s ease 0s;
+
+    @media (max-width: 768px) {
+        font-size: 8px;
+        width:80px;
     }
 `;
 
@@ -24,6 +35,8 @@ const UnorderedList = styled.ul`
     list-style: none;
     padding: 10px;
     margin: 0;
+    text-align:center;
+    width:100%;
 `;
 
 const ParentListItem = styled.li`
@@ -40,6 +53,7 @@ const ChildListItem = styled.li<ChildListItemProps>`
     list-style: none;
     display: none;
     white-space: nowrap;
+    text-align:center;
 
     &:hover {
         background:rgba(75, 75, 75, 1);
@@ -56,8 +70,16 @@ const ChildListItem = styled.li<ChildListItemProps>`
     css`
       width: 100%;
       padding:12px;
-      top: ${index * 35 + 12}px;
+      top: ${(index * 30) + 12}px;
       left:-12px;
+
+      transition: all 0.3s ease 0s;
+
+        @media (max-width: 768px) {
+            font-size: 8px;
+            top: ${(index * 30) + 10}px;
+        }
+      
     `}
 `;
 
